@@ -1,0 +1,25 @@
+PACKAGE = libcurl
+PACKAGEVERSION = 8.21.0
+MODE = seq
+
+EXISTENCETEST = \
+	      --title "curl bin" \
+	      --dir bin curl
+
+EXISTENCETEST = \
+	      --title "wcurl bin" \
+	      --dir bin wcurl
+
+EXISTENCETEST = \
+	      --title "header" \
+	      --dir inc curl/curl.h
+
+EXISTENCETEST = \
+	      --title "library" \
+	      --ldd \
+	      --dir lib libcurl.so
+
+EXISTENCETEST = \
+	      --title "pkg-config" \
+	      --dir lib pkgconfig/libcurl.pc
+

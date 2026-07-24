@@ -1,0 +1,17 @@
+PACKAGE = libaec
+PACKAGEVERSION = 1.1.6
+MODE = seq
+
+EXISTENCETEST = \
+	      --title "header" \
+	      --dir inc libaec.h
+
+EXISTENCETEST = \
+	      --title "library" \
+	      --ldd \
+	      --dir lib libaec.so
+
+EXISTENCETEST = \
+	      --title "cmake modules" \
+	      lib/cmake/libaec/libaec-config.cmake
+
