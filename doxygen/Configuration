@@ -4,5 +4,6 @@ MODE = seq
 
 EXISTENCETEST = \
 	      --title "doxygen executable" \
+	      --run --run_args '\-\-version' \
 	      --dir bin doxygen
 	      
