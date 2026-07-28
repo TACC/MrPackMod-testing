@@ -1,0 +1,8 @@
+PACKAGE = doxygen
+PACKAGEVERSION = 1.17.0
+MODE = seq
+
+EXISTENCETEST = \
+	      --title "doxygen executable" \
+	      --dir bin doxygen
+	      
