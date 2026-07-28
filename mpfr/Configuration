@@ -1,0 +1,18 @@
+################################################################
+####
+#### Regression tests for mpfr using MrPackMod
+####
+################################################################
+
+PACKAGE = mpfr
+PACKAGEVERSION = 4.2.2
+MODE = seq
+
+EXISTENCETEST = \
+		     --title "header" \
+		     --dir inc mpfr.h
+
+EXISTENCETEST = \
+		     --title "lib" \
+		     --dir lib libmpfr.so
+

@@ -1,0 +1,18 @@
+################################################################
+####
+#### Regression tests for gmp using MrPackMod
+####
+################################################################
+
+PACKAGE = gmp
+PACKAGEVERSION = 6.3.0
+MODE = seq
+
+EXISTENCETEST = \
+		     --title "header" \
+		     --dir inc gmp.h
+
+EXISTENCETEST = \
+		     --title "dynamic lib" \
+		     --ldd -r \
+		     --dir lib libgmp.so

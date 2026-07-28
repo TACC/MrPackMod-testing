@@ -1,3 +1,9 @@
+################################################################
+####
+#### Regression tests for libcurl using MrPackMod
+####
+################################################################
+
 PACKAGE = libcurl
 PACKAGEVERSION = 8.21.0
 MODE = seq

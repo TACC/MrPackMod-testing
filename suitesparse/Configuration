@@ -1,0 +1,19 @@
+################################################################
+####
+#### Regression tests for suitesparse using MrPackMod
+####
+################################################################
+
+PACKAGE = suitesparse
+PACKAGEVERSION = 7.11.0
+MODE = mpi
+
+EXISTENCETEST = \
+		     --title "header" \
+		     --dir inc suitesparse/GraphBLAS.h
+
+EXISTENCETEST = \
+    --title "mongoose" \
+    --ldd -r \
+    --dir bin suitesparse_mongoose
+
