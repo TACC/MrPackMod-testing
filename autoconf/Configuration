@@ -1,0 +1,8 @@
+PACKAGE = autoconf
+PACKAGEVERSION = 2.72
+MODE = seq
+
+EXISTENCETEST = \
+	      --title "autoconf executable" \
+	      --dir bin autoconf
+	      
