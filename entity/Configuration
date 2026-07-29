@@ -1,0 +1,8 @@
+PACKAGE = entity
+PACKAGEVERSION = 1.4.4
+MODE = mpi
+
+EXISTENCETEST = \
+	      --title "binary" \
+	      --dir bin entity.xc
+
