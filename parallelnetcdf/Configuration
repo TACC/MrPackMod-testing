@@ -5,7 +5,7 @@
 
 PACKAGE = parallelnetcdf
 PACKAGEVERSION = 4.10.0
-MODE = seq
+MODE = mpi
 
 EXISTENCETEST = --title "config program" --dir bin nc-config
 EXISTENCETEST = --title "pkgconfig" --dir lib pkgconfig/netcdf.pc
