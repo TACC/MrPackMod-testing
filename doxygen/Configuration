@@ -1,3 +1,10 @@
+################################################################
+####
+#### Regressions tests for Doxygen
+#### using MrPackMod (https://github.com/TACC/MrPackMod)
+####
+################################################################
+
 PACKAGE = doxygen
 PACKAGEVERSION = 1.17.0
 MODE = seq
