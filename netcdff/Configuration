@@ -6,8 +6,12 @@
 ##
 
 PACKAGE = netcdff
-PACKAGEVERSION = 4.6.2
+PACKAGEVERSION = 4.6.4
 MODE = seq
+
+# in production netcdf & netcdff are separate modules,
+# so we need to load netcdf explicitly
+MODULES = netcdf
 
 # Fortran tests are done separately in dev, but jointly in production
 include ../netcdf/Configuration.seq_fortran
