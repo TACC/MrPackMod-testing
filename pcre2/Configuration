@@ -9,5 +9,6 @@ EXISTENCETEST = \
 
 EXISTENCETEST = \
 	      --title "cmake config" \
+	      --dir lib \
 	      cmake/pcre2-config.cmake
 
