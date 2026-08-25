@@ -6,7 +6,7 @@ project( ${PROJECTNAME}
 add_executable( ${PROJECTNAME} ${PROJECTNAME}.c )
 target_compile_features( ${PROJECTNAME} PRIVATE cxx_std_17 )
 
-find_package( MPI REQUIRED )
+find_package( MPI 4.0 REQUIRED )
 
 # target_include_directories(
 # 	${PROJECTNAME} PUBLIC 
