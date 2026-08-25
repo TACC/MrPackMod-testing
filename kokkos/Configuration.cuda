@@ -1,5 +1,11 @@
+################################################################
+####
+#### Regression tests for Kokkos, CUDA mode
+####
+################################################################
+
 PACKAGE = kokkos
-PACKAGEVERSION = 5.0.1-cuda
+PACKAGEVERSION = 5.2.0-cuda
 MODE = omp
 MODULES = cuda
 
