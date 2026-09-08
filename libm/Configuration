@@ -1,0 +1,8 @@
+PACKAGE = NOPACKAGE
+PACKAGEVERSION = NOVERSION
+MODE = seq
+
+CMAKETEST = \
+	--title "sqrt 2.2.5" \
+	-r \
+	sqrt.c
