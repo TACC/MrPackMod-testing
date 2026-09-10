@@ -4,7 +4,7 @@
 ##
 
 PACKAGE = parallelnetcdf
-PACKAGEVERSION = 4.10.0
+PACKAGEVERSION = 4.10.1
 MODE = mpi
 
 EXISTENCETEST = --title "config program" --dir bin nc-config
