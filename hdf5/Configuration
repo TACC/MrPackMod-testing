@@ -14,7 +14,7 @@ EXISTENCETEST = --title "C++ library" --dir lib --ldd libhdf5_cpp.so
 
 CMAKETEST = --title "can we compile C"  has.c
 CMAKETEST = --title "are we threadsafe" thread.c
-CMAKETEST = --title "can we run C" dataset.c
+CMAKETEST = --title "can we run C" -r dataset.c
 CMAKETEST = --title "can we compile Fortran" fmod.F90
 
 # CLEANTARGET = example.h5

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+package=$( mpm.py package | tail -n 1 )
+echo "================================================================"
+echo "    Testing package=${package}"
+echo "================================================================"
+echo
+
 modulereset ()
 {
     module purge;
@@ -22,8 +28,17 @@ for compiler in $( cat ../compilers_${host}.sh ) ; do
     compiler=${compiler##*:}
     module -t load $compiler
     if [ $? -gt 0 ] ; then
-	echo "could not load compiler"
+	echo "Could not load compiler=${compiler}"
+	continue
     else
-	REGRESSIONHEADEREXTRA=", compiler=${compiler}" mpm.py regression
+	module -t try-load ${package}
+	if [ $? -gt 0 ] ; then
+	    echo "Could not load package=${package}"
+	    continue
+	fi
+	compilermodule=$( module -t show ${compiler} 2>&1 )
+	SYSTEMMODULES=cmake \
+	     REGRESSIONHEADEREXTRA=", compiler=${compilermodule}" \
+	     mpm.py regression
     fi
 done
