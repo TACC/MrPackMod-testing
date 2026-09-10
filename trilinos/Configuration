@@ -1,5 +1,5 @@
 PACKAGE = trilinos
-PACKAGEVERSION = 17.1.0
+PACKAGEVERSION = 17.2.1
 MODE = mpi
 
 EXISTENCETEST = --title "tpetra header" --dir inc Tpetra_Core.hpp

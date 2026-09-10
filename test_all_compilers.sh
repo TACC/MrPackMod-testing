@@ -24,6 +24,6 @@ for compiler in $( cat ../compilers_${host}.sh ) ; do
     if [ $? -gt 0 ] ; then
 	echo "could not load compiler"
     else
-	mpm.py regression
+	REGRESSIONHEADEREXTRA=", compiler=${compiler}" mpm.py regression
     fi
 done
