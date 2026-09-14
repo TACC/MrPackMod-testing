@@ -16,15 +16,12 @@ EXISTENCETEST = \
 CMAKETEST = \
 	--title "Sanity test" \
 	sanity.c
-CMAKETEST = \
-	--title "Debug enabled" \
-	debug1.c
-CMAKETEST = \
-	--title "Debug disabled" \
-	debug0.c
-CMAKETEST = \
-	--title "has complex" \
-	complex.c
+PACKAGEVERSION*=debug   CMAKETEST = --title "Debug enabled"  debug1.c
+PACKAGEVERSION~=debug   CMAKETEST = --title "Debug disabled" debug0.c
+
+PACKAGEVERSION*=complex CMAKETEST = --title "has complex"    complex.c
+
+return
 ## if [[ "${PETSC_ARCH}" = *single* ]] ; then
 ##     realsize=4 ; else realsize=8 ; fi
 ## if [[ "${PETSC_ARCH}" = *complex* ]] ; then
