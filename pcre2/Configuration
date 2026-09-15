@@ -4,11 +4,11 @@ MODE = seq
 
 EXISTENCETEST = \
     --title "library" \
-    --ldd -r \
+    --ldd \
     --dir lib libpcre2-8.so
 
 EXISTENCETEST = \
 	      --title "cmake config" \
 	      --dir lib \
-	      cmake/pcre2-config.cmake
+	      cmake/pcre2/pcre2-config.cmake
 
