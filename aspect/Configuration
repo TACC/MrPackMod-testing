@@ -1,0 +1,29 @@
+################################################################
+####
+#### Configuration for Aspect regression tests
+####
+################################################################
+
+PACKAGE = aspect
+PACKAGEVERSION = 3.0.0
+MODE  = mpi
+
+EXISTENCETEST = \
+	      --title "release bin" \
+	      --ldd \
+	      --dir bin aspect-release
+
+RUNTEST = \
+	  --title "run release" \
+	  --dir bin aspect-release
+
+exit
+
+# https://github.com/geodynamics/aspect/issues/6716
+# ../cmake_test_driver.sh ${standardflags} -l ${logfile} \
+# 			--title "example: first" \
+# 			first.cpp
+
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TACC_ASPECT_DIR}/bin \
+	       ibrun  -np 1 \
+	       aspect-release --test --list-test-names-only
