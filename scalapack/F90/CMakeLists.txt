@@ -30,6 +30,8 @@ target_link_directories(
 	)
 target_link_libraries(
 	${PROJECTNAME} PUBLIC
+	${BLAS_LIBRARIES}
+	${LAPACK_LIBRARIES}
 	${scalapack_LIBRARIES}
 ## 	scalapack::scalapack
 	)

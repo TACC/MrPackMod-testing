@@ -1,0 +1,21 @@
+################################################################
+####
+#### MrPackMod regression tests for scalapack
+####
+################################################################
+
+PACKAGE = scalapack
+PACKAGEVERSION = 2.2.3
+MODE = mpi
+
+# broken:
+# https://github.com/Reference-ScaLAPACK/scalapack/issues/169
+CMAKETEST = \
+	  --title "compile F scalapack (pkg-config)" \
+	  --note "Broken because of incorrect pc file" \
+	  gridinit.F90
+
+CMAKETEST = \
+	  --title "compile F scalapack (cmake find)" \
+	  gridinit.f90
+
