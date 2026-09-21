@@ -6,8 +6,9 @@
 ################################################################
 
 PACKAGE = siesta
-PACKAGEVERSION = 5.2.2
+PACKAGEVERSION = 5.4.2
 MODE = mpi
+MODULES = phdf5
 
 EXISTENCETEST = \
 		     --title "have main program" \
