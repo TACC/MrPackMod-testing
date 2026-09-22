@@ -1,16 +1,12 @@
 cmake_minimum_required( VERSION 3.12 )
 project( ${PROJECTNAME}
-  DESCRIPTION "C programs for MPI testing"
+  DESCRIPTION "C programs for compiler testing"
   VERSION 1.0 )
 
 add_executable( ${PROJECTNAME} ${PROJECTNAME}.c )
 target_compile_features( ${PROJECTNAME} PRIVATE cxx_std_17 )
 
-find_package( MPI 3.1 REQUIRED )
-
 target_link_libraries(
-	${PROJECTNAME} PUBLIC
-	MPI::MPI_C
-	# ${MPI_C_LIBRARIES} 
+	${PROJECTNAME} PUBLIC m
 	)
 install( TARGETS ${PROJECTNAME} DESTINATION . )
