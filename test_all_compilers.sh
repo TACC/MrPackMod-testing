@@ -24,14 +24,14 @@ for compiler in $( cat ../compilers_${host}.sh ) ; do
     echo -e "================\nTesting: $compiler\n================"
     modulereset 2>/dev/null
     path=${compiler%%:*}
-    if [ ! -z "${path}" ] ; then module use $path ; fi
+    if [ ! -z "${path}" ] ; then module use $path 2>/dev/null ; fi
     compiler=${compiler##*:}
-    module -t load $compiler
+    module -t load $compiler 2>/dev/null
     if [ $? -gt 0 ] ; then
 	echo "Could not load compiler=${compiler}"
 	continue
     else
-	module -t try-load ${package}
+	module -t try-load ${package} 2>/dev/null
 	if [ $? -gt 0 ] ; then
 	    echo "Could not load package=${package}"
 	    continue
