@@ -1,0 +1,9 @@
+PACKAGE = compiler
+PACKAGEVERSION = 1.0
+PACKAGE==compiler abort Set explicit PACKAGE and PACKAGEVERSION to test
+NOMODULE = 1
+MODE = seq
+
+CMAKETEST = \
+			--title "has uint64" \
+			uint64.c
