@@ -1,5 +1,5 @@
 PACKAGE = pcre2
-PACKAGEVERSION = 10.46
+PACKAGEVERSION = 10.48
 MODE = seq
 
 EXISTENCETEST = \
@@ -8,7 +8,6 @@ EXISTENCETEST = \
     --dir lib libpcre2-8.so
 
 EXISTENCETEST = \
-	      --title "cmake config" \
-	      --dir lib \
-	      cmake/pcre2/pcre2-config.cmake
+    --title "cmake config" \
+    --dir lib cmake/pcre2/pcre2-config.cmake
 
