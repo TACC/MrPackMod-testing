@@ -3,6 +3,13 @@ PACKAGEVERSION = 3.3.0
 MODE = seq
 MODULES = hdf5
 
+EXISTENCETEST = \
+	      --title "cmake conf" \
+	      --dir lib cmake/HighFive/HighFiveConfig.cmake
+EXISTENCETEST = \
+	      --title "random header" \
+	      --dir inc highfive/H5Object.hpp
+
 CMAKETEST = \
 	  --title "C++ example" \
 	  vectors.cpp
