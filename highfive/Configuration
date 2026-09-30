@@ -1,0 +1,8 @@
+PACKAGE = highfive
+PACKAGEVERSION = 3.3.0
+MODE = seq
+MODULES = hdf5
+
+CMAKETEST = \
+	  --title "C++ example" \
+	  vectors.cpp
