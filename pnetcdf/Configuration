@@ -14,8 +14,9 @@ EXISTENCETEST = \
 		     --dir lib libpnetcdf.so
 
 CMAKETEST = \
-			--title "severely insufficient compile test" \
-			sanity.c
+	  --title "severely insufficient compile test" \
+	  --note "https://github.com/Parallel-NetCDF/PnetCDF/issues/245" \
+	  sanity.c
 CMAKETEST = \
 			--title "compile create_open" \
 			create_open.c
