@@ -1,0 +1,18 @@
+PACKAGE = cantera
+PACKAGEVERSION = git
+MODE = seq
+
+EXISTENCETEST = \
+	      --run_args '\-h' \
+	      --title "random executable" \
+	      --dir bin yaml2ck 
+
+EXISTENCETEST = \
+	      --ldd \
+	      --title "shared lib" \
+	      --dir lib libcantera_shared.so
+
+CMAKETEST = \
+	  --title "cathermo_test1" \
+	  HMW_test_1.cpp
+	  
