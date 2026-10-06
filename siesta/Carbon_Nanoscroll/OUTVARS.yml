@@ -1,0 +1,44 @@
+%YAML 1.2
+---
+
+siesta:
+  version: "5.2.2"
+  arch: "x86_64"
+  compiler: "IntelLLVM-2024.0.0"
+  fflags: "-g -O2 -xHost -fp-model=strict"
+  fppflags: "<not-set>"
+  libs: "<not-set>"
+  build: "mpi"
+  openmp: "no"
+  gemm3m: "yes"
+  netcdf: "no"
+  netcdf4: "no"
+  netcdf4_mpi: "no"
+  metis: "no"
+  chess: "no"
+  elpa: "yes"
+  flook: "no"
+  pexsi: "no"
+
+energies:
+  Ebs:          -0.66633375E+03
+  Eions:           0.31377591E+04
+  Ena:           0.10078764E+04
+  Ekin:           0.10550789E+04
+  Enl:          -0.34389864E+02
+  Eso:           0.00000000E+00
+  Edftu:           0.00000000E+00
+  DEna:           0.24803171E+02
+  DUscf:           0.94337295E+00
+  DUext:           0.00000000E+00
+  Exc:          -0.45876442E+03
+  Ecorrec:           0.00000000E+00
+  Emadel:           0.00000000E+00
+  Emeta:           0.00000000E+00
+  Emolmec:           0.00000000E+00
+  Ekinion:           0.00000000E+00
+  Eharris:          -0.15422115E+04
+  Etot:          -0.15422115E+04
+  FreeEng:          -0.15422139E+04
+
+...
