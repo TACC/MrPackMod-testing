@@ -51,4 +51,5 @@ for compiler in $( cat ../compilers_${host}.sh ) ; do
 	     REGRESSIONHEADEREXTRA=", compiler=${compilermodule}" \
 	     mpm.py regression
     fi
+    echo
 done
