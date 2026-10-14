@@ -48,6 +48,13 @@ CMAKETEST = \
 	  fortran2008.F90
 
 
+#
+# Cuda tests
+#
+CMAKETEST = \
+	  --title "do we have cuda" \
+	  has_cuda.cu
+
 return
 ## if [[ "${PETSC_ARCH}" = *single* ]] ; then
 ##     realsize=4 ; else realsize=8 ; fi
