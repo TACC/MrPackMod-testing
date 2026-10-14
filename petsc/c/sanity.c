@@ -4,16 +4,14 @@
 #define __FUNCT__ "main"
 int main(int argc,char **args)
 {
-  PetscErrorCode ierr;
   MPI_Comm comm;
   Mat A;
-  PetscScalar one = 1.0;
   
   PetscFunctionBegin;
   PetscInitialize(&argc,&args,0,0);
 
   comm = PETSC_COMM_SELF;
-  int nprocs,procno;
+  int nprocs;
   MPI_Comm_size(comm,&nprocs);
   if (nprocs>1) {
     printf("Sequential example only \n"); return 1; }
