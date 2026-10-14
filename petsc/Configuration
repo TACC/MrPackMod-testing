@@ -21,6 +21,33 @@ PACKAGEVERSION~=debug   CMAKETEST = --title "Debug disabled" debug0.c
 
 PACKAGEVERSION*=complex CMAKETEST = --title "has complex"    complex.c
 
+#
+# Kokkos
+#
+CMAKETEST = \
+	  --title "have kokkos" \
+	  have_kokkos.c
+
+CMAKETEST = \
+	  --title "ksp19 kokkos" \
+	  --run_args "-ksp_type cg -pc_type bjkokkos -pc_bjkokkos_ksp_max_it 60 -pc_bjkokkos_ksp_type tfqmr -pc_bjkokkos_pc_type jacobi -pc_bjkokkos_ksp_rtol 1e-3 -mat_type aijkokkos" \
+	  --value seqaijkokkos \
+	  ksp19kokkos.c
+	  
+#
+# Fortran
+#
+PACKAGEVERSION*=f08 \
+CMAKETEST = \
+	  --title "can we compile Fortran1990" \
+	  fortran1990.F90
+
+PACKAGEVERSION~=f08 \
+CMAKETEST = \
+	  --title "can we compile Fortran2008" \
+	  fortran2008.F90
+
+
 return
 ## if [[ "${PETSC_ARCH}" = *single* ]] ; then
 ##     realsize=4 ; else realsize=8 ; fi
