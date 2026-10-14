@@ -1,8 +1,21 @@
 #!/bin/bash
 
+function usage () {
+    echo "Usage: $0 [ -h ] [ -v version ] [ -p python ] [ -s systemmodules ]"
+}
+
 pkgversion=$( mpm.py version )
+python=
+systemmodules="cmake" # has to be nonnull
 while [ $# -gt 0 ] ; do
-    if [ "$1" = "-v" ] ; then
+    if [ "$1" = "-h" ] ; then
+	usage && exit 0
+    elif [ "$1" = "-p" ] ; then
+	shift && python=$1 && shift
+    elif [ "$1" = "-s" ] ; then
+	shift && systemmodules="cmake $1" && shift
+	echo "Using: $systemmodules"
+    elif [ "$1" = "-v" ] ; then
 	shift && pkgversion=$1 && shift
     else
 	echo "Error: unrecognized option <<$1>>" && exit 1
@@ -40,13 +53,16 @@ for compiler in $( cat ../compilers_${host}.sh ) ; do
 	echo "Could not load compiler=${compiler}"
 	continue
     else
+	if [ ! -z "${python}" ] ; then
+	    module -t load ${python} 2>/dev/null
+	fi
 	module -t try-load ${package}/${pkgversion} 2>/dev/null
 	if [ $? -gt 0 ] ; then
 	    echo "Could not load package=${package}"
 	    continue
 	fi
 	compilermodule=$( module -t show ${compiler} 2>&1 )
-	SYSTEMMODULES=cmake \
+	SYSTEMMODULES="${systemmodules}" \
 	     PACKAGEVERSION=${pkgversion} \
 	     REGRESSIONHEADEREXTRA=", compiler=${compilermodule}" \
 	     mpm.py regression
