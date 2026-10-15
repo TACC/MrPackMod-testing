@@ -1,0 +1,14 @@
+################################################################
+####
+#### MrPackMod configuration for phighfive testing
+####
+################################################################
+
+PACKAGE = phighfive
+PACKAGEVERSION = 3.3.0
+MODE = mpi
+MODULES = phdf5
+
+CMAKETEST = \
+	  --title "C++ example" \
+	  vectors.cpp

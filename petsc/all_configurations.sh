@@ -51,5 +51,6 @@ $( if [ $d = "ON" ] ; then echo "debug" ; fi )
 	done
     done
 done 2>&1 | tee -a ${logfile}
+
 echo -e "\nSee ${logfile}\n"
 
