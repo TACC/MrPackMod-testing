@@ -1,0 +1,23 @@
+PACKAGE = parpack
+PACKAGEVERSION = 3.9.1
+
+EXISTENCETEST = \
+		     --title "h header in arpack subdir" \
+		     --dir inc arpack/parpack.h
+
+EXISTENCETEST = \
+		     --title "h header in arpack subdir" \
+		     --dir inc arpack/parpack.hpp
+
+CMAKETEST = \
+	  --title "can we compile C" \
+	  has.c
+
+CMAKETEST = \
+	  --title "can we compile official example" \
+	  icb_parpack_c.c
+
+CMAKETEST = \
+	  --title "can we compile Fortran" \
+	  issue46.f
+
