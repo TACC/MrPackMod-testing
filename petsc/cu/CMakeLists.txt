@@ -4,14 +4,15 @@
 cmake_minimum_required( VERSION 3.20 )
 project( ${PROJECTNAME}
   DESCRIPTION "Cuda programs for PETSc testing"
-  VERSION 1.0 LANGUAGES C CXX CUDA )
+  VERSION 1.0  ) 
 
-enable_language( CUDA )
-##set(CMAKE_CUDA_ARCHITECTURES 70)
+enable_language( C CXX CUDA )
+set( CMAKE_CUDA_ARCHITECTURES 90 )
 add_executable( ${PROJECTNAME} ${PROJECTNAME}.cu )
 
 find_package( MPI REQUIRED COMPONENTS C CXX )
-message( STATUS "Mpi includes: ${MPI_C_INCLUDE_DIRS}" )
+message( STATUS "Mpi C includes: ${MPI_C_INCLUDE_DIRS}" )
+message( STATUS "Mpi CXX includes: ${MPI_CXX_INCLUDE_DIRS}" )
 
 find_package( PkgConfig REQUIRED )
 pkg_check_modules( PETSC REQUIRED petsc )
@@ -21,9 +22,10 @@ message( STATUS "PETSc libraries: ${PETSC_LIBRARY_DIRS}" )
 
 target_include_directories(
         ${PROJECTNAME} PUBLIC
+	${MPI_C_INCLUDE_DIRS}
         ${PETSC_INCLUDE_DIRS} )
 target_link_libraries(
-        ${PROJECTNAME} PUBLIC MPI::MPI_C
+        ${PROJECTNAME} PUBLIC MPI::MPI_CXX
 	)
 target_link_directories(
         ${PROJECTNAME} PUBLIC
