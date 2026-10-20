@@ -1,0 +1,18 @@
+################################################################
+####
+#### MrPackMod configuration for Arpack tests
+####
+################################################################
+
+PACKAGE = arpack
+PACKAGEVERSION = 3.9.1
+MODE = seq
+
+EXISTENCETEST = \
+	      --title "header in arpack subdir" \
+	      --dir inc arpack/arpack.h
+
+CMAKETEST = \
+	      --title "can we compile Fortran" \
+	      dssimp.f
+

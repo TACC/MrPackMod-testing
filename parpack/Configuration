@@ -1,5 +1,6 @@
 PACKAGE = parpack
 PACKAGEVERSION = 3.9.1
+MODE = mpi
 
 EXISTENCETEST = \
 		     --title "h header in arpack subdir" \
