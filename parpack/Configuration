@@ -1,3 +1,9 @@
+################################################################
+####
+#### MrPackMod configuration for Parpack tests
+####
+################################################################
+
 PACKAGE = parpack
 PACKAGEVERSION = 3.9.1
 MODE = mpi

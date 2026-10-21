@@ -6,6 +6,11 @@ CMAKETEST = \
 			--title "compile c" \
 			mpi.c
 
+CMAKEVARTEST = \
+			--title "MPI_INCLUDE_DIRS" \
+			--grep MPI_C_INCLUDE_DIRS \
+			mpi.c
+
 CMAKETEST = \
 			--title "compile c++" \
 			mpi.cxx
