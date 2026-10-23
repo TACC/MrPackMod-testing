@@ -9,6 +9,7 @@ CMAKETEST = \
 CMAKEVARTEST = \
 			--title "MPI_INCLUDE_DIRS" \
 			--grep MPI_C_INCLUDE_DIRS \
+			--cmake_options "\-DCMAKE_MESSAGE_LOG_LEVEL=DEBUG" \
 			mpi.c
 
 CMAKETEST = \

@@ -35,12 +35,16 @@ elseif( DEFINED ENV{TACC_MKL_DIR} )
 endif()
 
 find_package(arpackng)
+
 target_include_directories(${PROJECTNAME} PUBLIC
   ${MPI_Fortran_INCLUDE_DIRS}
+  # unusual: target goes in include_directories
+  ARPACK::ARPACK
 )
 target_link_libraries(${PROJECTNAME} PUBLIC
-	  MPI::MPI_Fortran
-  ARPACK::ARPACK)
+  MPI::MPI_Fortran
+  ARPACK::ARPACK
+)
 
 find_package( MPI )
 find_package( MPI COMPONENTS Fortran REQUIRED )
