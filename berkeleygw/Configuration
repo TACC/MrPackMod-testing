@@ -6,6 +6,10 @@ EXISTENCETEST = \
 	      --title "random python bin" \
 	      --dir bin matrix.py
 EXISTENCETEST = \
+	      --title "random dot-x bin" \
+	      --executable \
+	      --dir bin abi2bgw.x
+EXISTENCETEST = \
 	      --title "fortran global mod" \
 	      --dir inc global_m.mod
 EXISTENCETEST = \
