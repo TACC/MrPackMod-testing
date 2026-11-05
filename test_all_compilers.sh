@@ -1,15 +1,18 @@
 #!/bin/bash
 
 function usage () {
-    echo "Usage: $0 [ -h ] [ -v version ] [ -p python ] [ -s systemmodules ]"
+    echo "Usage: $0 [ -h ] [ -c compiler ] [ -v version ] [ -p python ] [ -s systemmodules ]"
 }
 
+selectcompiler=
 pkgversion=$( mpm.py version )
 python=
 systemmodules="cmake" # has to be nonnull
 while [ $# -gt 0 ] ; do
     if [ "$1" = "-h" ] ; then
 	usage && exit 0
+    elif [ "$1" = "-c" ] ; then
+	shift && selectcompiler=$1 && shift
     elif [ "$1" = "-p" ] ; then
 	shift && python=$1 && shift
     elif [ "$1" = "-s" ] ; then
@@ -43,6 +46,12 @@ host=$(hostname)
 host=${host%%.tacc.utexas.edu}
 host=${host##*.}
 for compiler in $( cat ../compilers_${host}.sh ) ; do
+    if [ ! -z "${selectcompiler}" ] ; then
+	if [[ $compiler != *$selectcompiler* ]] ; then
+	    echo -e "\n .. skipping compiler ${compiler}\n"
+	    continue
+	fi
+    fi
     echo -e "================\nTesting: $compiler\n================"
     modulereset 2>/dev/null
     path=${compiler%%:*}
