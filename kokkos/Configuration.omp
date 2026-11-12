@@ -5,7 +5,7 @@
 ################################################################
 
 PACKAGE = kokkos
-PACKAGEVERSION = 5.2.1-omp
+PACKAGEVERSION = 5.3.0-omp
 MODE = omp
 NONMODULES = cuda
 
