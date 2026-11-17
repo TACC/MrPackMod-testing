@@ -1,0 +1,35 @@
+##
+## MrPackMod regression tests for mumps
+##
+
+PACKAGE = mumps
+PACKAGEVERSION = 5.9.0
+MODE = mpi
+
+EXISTENCETEST = \
+		     --title "settings file" \
+		     --dir dir Makefile.inc
+
+EXISTENCETEST = \
+		     --title "c single header" \
+		     --dir inc smumps_c.h
+
+EXISTENCETEST = \
+		     --title "c double header" \
+		     --dir inc dmumps_c.h
+
+EXISTENCETEST = \
+		     --title "c complex header" \
+		     --dir inc cmumps_c.h
+
+# EXISTENCETEST = \
+# 		     --title "single lib" \
+# 		     --dir lib libsmumps.so
+
+EXISTENCETEST = \
+		     --title "double lib" \
+		     --dir lib libdmumps.so
+
+EXISTENCETEST = \
+		       --title "compile and run" \
+		       c_example.c 
