@@ -20,7 +20,7 @@ EXISTENCETEST = \
 		     --run_args 'carbon_nanoscroll.fdf' --run_in_dir Carbon_Nanoscroll \
 		     --dir bin siesta
 
-exit 0
+return
 
 ##
 ## example with lowered precision to make it finish relatively quickly.
